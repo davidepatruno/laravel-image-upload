@@ -44,12 +44,12 @@ class PostController extends Controller
     {
         $data = $request->all();
 
-        $data['poster'] = Storage::disk('public')->putFile('posts_poster', $data['file_poster']);
+        $data['poster'] = Storage::disk('public')->put('posts_poster', $data['file_poster']);
 
         $post = New Post;
         $post->fill($data);
         $post->save();
-        return view('admin.posts.index');
+        return redirect()->route('posts.index');
     }
 
     /**

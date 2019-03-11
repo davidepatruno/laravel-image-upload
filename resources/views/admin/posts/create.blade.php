@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="h1">Aggiungi nuovo post</div>
-                <form class="form-group" action="{{ route('posts.store') }}" method="post">
+                <form class="form-group" action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
 
